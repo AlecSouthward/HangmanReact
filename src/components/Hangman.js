@@ -1,4 +1,5 @@
 import React from 'react';
+import './Hangman.css'
 
 // Define hangman images based on the number of incorrect guesses
 const hangman1 = `${process.env.PUBLIC_URL}/data/hangman-drawings/state1.png`;
@@ -27,9 +28,9 @@ const Hangman = ({ incorrectGuesses }) => {
     const imageSrc = getImageSource(incorrectGuesses);
     
     return (
-        <div className="Hangman">
+        <div>
             {/* Display the hangman image */}
-            <img src={imageSrc} alt={`Hangman`} />
+            <img className="hangman" src={imageSrc} alt={`Hangman`} />
         </div>
     );
 };

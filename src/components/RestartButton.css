@@ -1,12 +1,4 @@
-.instructions {
-    font-family: 'Lucida Console', sans-serif;
-
-    padding-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.instructions-button {
+.restart-button {
     font-family: 'Lucida Console', sans-serif;
     transition-duration: 1s;
 
@@ -17,14 +9,13 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
-
-    background-color: #6fa1de;
+    background-color: #F5A65B;
     border-radius: 2px;
-    border-color: rgb(76, 139, 179);
+    border-color: rgb(197, 125, 76);
     border-style: solid;
 }
 
-.instructions-button:hover {
+.restart-button:hover {
     transition-duration: 0.3s;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.2);
 }

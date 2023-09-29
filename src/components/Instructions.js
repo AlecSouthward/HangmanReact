@@ -17,7 +17,7 @@ const Instructions = () => {
 
   return (
     <div>
-      <button type='submit' onClick={() => setToggle(!toggleState)}>
+      <button type='submit' className='instructions-button' onClick={() => setToggle(!toggleState)}>
         Toggle Instructions
       </button>
 

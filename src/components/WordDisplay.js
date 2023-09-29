@@ -1,4 +1,5 @@
 import React from 'react';
+import './WordDisplay.css'
 
 const WordDisplay = ({ word, guessedLetters }) => {
   // Create a display word where guessed letters are shown, and others are replaced with underscores
@@ -8,7 +9,7 @@ const WordDisplay = ({ word, guessedLetters }) => {
     .join(' '); // Join the characters to form the display word with spaces
 
   return (
-    <div className="WordDisplay">
+    <div className="display">
       {/* Render the display word */}
       <p>{displayWord}</p>
     </div>

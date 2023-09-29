@@ -18,7 +18,9 @@ class App extends Component {
       dictionary: [],
       gameStatus: 'ongoing', // 'ongoing', 'won', or 'lost'
     };
+  }
 
+  componentDidMount() {
     // Load the dictionary data from an external text file
     this.loadDictionary();
   }
@@ -79,8 +81,6 @@ class App extends Component {
   handleGuess = (event, letter) => {
     const { word, guessedLetters, incorrectGuesses, gameStatus } = this.state;
 
-    // Changing the letter button's class to show that it has already been guessed
-    event.currentTarget.classList.add('guessed-letter');
 
     // Don't allow guesses if the game is not ongoing
     if (gameStatus !== 'ongoing') {
@@ -92,6 +92,9 @@ class App extends Component {
 
       if (!word.includes(letter)) {
         const newIncorrectGuesses = incorrectGuesses + 1;
+
+        // Changing the letter button's class to show that it has been guessed wrong
+        event.currentTarget.classList.add('incorrect-letter');
 
         if (newIncorrectGuesses >= 11) {
           // Player lost the game
@@ -109,12 +112,15 @@ class App extends Component {
         }
       }
       else {
+        // Changing the letter button's class to show that it has been guessed right
+        event.currentTarget.classList.add('correct-letter');
+
         // Update guessed letters
         this.setState({ guessedLetters: newGuessedLetters });
       }
       
       if (this.checkGuess(newGuessedLetters)) {
-        // Player won the game if all letters (and spaces) in the word have been guessed
+        // Player won the game if all letters in the word have been guessed
         this.setState({ gameStatus: 'won' });
       }
     }
@@ -144,9 +150,10 @@ class App extends Component {
         {gameStatus !== 'ongoing' && <p>{message}</p>}
 
         <WordDisplay word={word} guessedLetters={guessedLetters} />
-        <a>{12 - (this.state.incorrectGuesses + 1)} guesses left.</a>
+
+        {/* Displays the total amount of guesses left */}
+        <a>{12 - (this.state.incorrectGuesses + 1)} guess{12 - (this.state.incorrectGuesses + 1) == 1 ? '' : 'es'} left.</a>
         <Keyboard onClick={this.handleGuess} />
-        <br/>
         <RestartButton onClick={this.restartGame} />
         <Instructions/>
       </div>

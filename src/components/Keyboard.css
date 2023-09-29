@@ -1,3 +1,39 @@
-.guessed-letter {
-    background-color: grey;
+.incorrect-letter {
+    background-color: #de8186;
+}
+
+.correct-letter {
+    background-color: #8FF7A7;
+}
+
+.key-button {
+    transition-duration: 0.5s;
+    font-size: 20px;
+    font-family: 'Lucida Console', sans-serif;
+
+    border: solid;
+    border-width: 1px;
+    border-radius: 8px;
+
+    margin-left: 1px;
+    margin-right: 1px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.key-button:not(.correct-letter):not(.incorrect-letter):hover {
+    transition-duration: 0.2s;
+    font-size: 20px;
+
+    background-color: #B5BAD0;
+
+    border-radius: 6px;
+}
+
+.keyboard {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

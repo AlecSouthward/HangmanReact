@@ -1,10 +1,11 @@
 import React from 'react';
+import './RestartButton.css'
 
 const RestartButton = ({ onClick }) => {
   return (
-    <div className="RestartButton">
+    <div>
       {/* Render a button with an onClick event handler */}
-      <button onClick={onClick}>Restart Game</button>
+      <button className="restart-button" onClick={onClick}>Restart Game</button>
     </div>
   );
 };
